@@ -1,0 +1,35 @@
+---
+remote_computers:
+  - hostname: hostname
+    username: username
+    password: Maybe I should use MS Password Store instead.
+
+hosts:
+  - hostname: local
+    processes:
+      - name: notepad.exe
+        path: \
+        restart: auto
+
+      - name: taskmgr.exe
+        restart: manual
+        path: C:\sandbox\
+
+      - name: process2.exe
+        restart: manual
+        path: C:\sandbox\
+
+
+  - hostname: hostname
+    processes:
+      - name: process2.exe
+        restart: manual
+        path: \
+
+      - name: process3.exe
+        restart: manual
+        path: C:\sandbox\
+
+
+
+...
